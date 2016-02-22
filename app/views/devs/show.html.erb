@@ -1,0 +1,23 @@
+<%= @dev.first_name %>
+<ul>
+  <% @comments.each do |comment| %>
+    <li><%= comment.message %></li>
+</ul>
+<% end %>
+<%= form_for @comment, url: dev_comments_path(@dev.id), method: "post" do |f| %>
+  <% if @comment.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @comment.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div>
+      <%= f.label :message %>
+      <%= f.text_field :message %>
+      <%= f.submit  %>
+    </div>
+<% end %>

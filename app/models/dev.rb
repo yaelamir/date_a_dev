@@ -1,11 +1,18 @@
 class Dev < ActiveRecord::Base
   has_secure_password
+
+
   validates :email, presence: true, uniqueness: true
   has_many :comments
-  # has_many :made_by, class_name: "comment", foreign_key: "author"
 
-  # def show
-  #   #{self.picture_url}
-  # end
+
+  # <%= image_tag.each do |pic| %>
+  #   <article>
+  #     <h4> <%= link_to pic.first_name, pic.picture_url %> </h4>
+
+
+  #     <img src="#{dev.picture_url}">
+  #   </article>
+  # <% end %>
 
 end

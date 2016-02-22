@@ -1,9 +1,16 @@
 class CommentsController < ApplicationController
-  def new
-    @comment = Comment.new
-  end
 
   def create
-    @comment = Comment.new(user_params)
+    @dev = Dev.find(params[:dev_id])
+    @comment = @dev.comments.new(author_id: current_dev.id,
+                                 message: params[:comment][:message])
+
+    if @comment.save
+      flash[:notice] = "You've successfully made a comment!"
+      redirect_to dev_path(params[:dev_id])
+    else
+      render root_path
+    end
+
   end
 end

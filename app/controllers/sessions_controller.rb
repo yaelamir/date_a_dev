@@ -10,13 +10,13 @@ class SessionsController < ApplicationController
       redirect_to devs_path, notice: 'Logged in!'
     else
       flash.now.alert = 'Invalid login credentials'
-      render :new
+      render 'new'
     end
   end
 
   def destroy
     session[:dev_id] = nil
-    redirect_to devs_path, notice: "Logged out!"
+    redirect_to root_path, notice: "Logged out!"
   end
 
 end

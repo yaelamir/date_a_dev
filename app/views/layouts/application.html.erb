@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DateADev</title>
+  <title>GitLove</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p>
-   <% if current_dev %>
-    Welcome, <%= current_dev.first_name %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Logout', session_path('dummy'), method: :delete %>
-  <% else %>
-    <%= link_to 'Login', login_path %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Sign Up', new_dev_path %>
-  <% end %>
-</p>
+<nav>
+  <ul>
+    <li><a href="" title=""></a></li>
+  </ul>
+</nav>
 <%= yield %>
 
 </body>

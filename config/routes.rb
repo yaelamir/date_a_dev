@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root "devs#new"
-  resources :comments, only:[:new, :create]
-  resources :devs # only:[:new, :create]
+  resources :devs do
+    resources :comments
+  end
 
   resources :sessions, only: [:new, :create, :destroy]
   get '/login', to: 'sessions#new'
