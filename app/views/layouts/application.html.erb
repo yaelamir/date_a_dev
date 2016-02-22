@@ -8,7 +8,15 @@
 </head>
 <body>
 <p>
-  <%= link_to 'Sign Up', new_dev_path %>
+   <% if current_dev %>
+    Welcome, <%= current_dev.first_name %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <%= link_to 'Logout', session_path('dummy'), method: :delete %>
+  <% else %>
+    <%= link_to 'Login', login_path %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <%= link_to 'Sign Up', new_dev_path %>
+  <% end %>
 </p>
 <%= yield %>
 

@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
 
   def create
     dev = Dev.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
-      sessions[:dev_id] = dev.id
+    if dev && dev.authenticate(params[:password])
+      session[:dev_id] = dev.id
       redirect_to devs_path, notice: 'Logged in!'
     else
       flash.now.alert = 'Invalid login credentials'
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    sessions[:dev_id] = nil
+    session[:dev_id] = nil
     redirect_to devs_path, notice: "Logged out!"
   end
 

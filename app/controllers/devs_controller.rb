@@ -1,5 +1,5 @@
 class DevsController < ApplicationController
-
+  # before_action :authorize
   def index
     @devs = Dev.all
   end
@@ -20,6 +20,7 @@ class DevsController < ApplicationController
     @dev = Dev.new(dev_params)
 
     if @dev.save
+      session[:dev_id] =
       flash[:notice] = "You've successfully signed in!"
       redirect_to devs_path
     else

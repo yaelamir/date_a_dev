@@ -3,4 +3,9 @@ class Dev < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   has_many :comments
   # has_many :made_by, class_name: "comment", foreign_key: "author"
+
+  # def show
+  #   #{self.picture_url}
+  # end
+
 end
