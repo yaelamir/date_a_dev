@@ -7,7 +7,8 @@
 <ul>
   <% @comments.each do |comment| %>
     <li><%= comment.message %></li>
-<% end %>
+  <% end %>
+</ul>
 <%= form_for @comment, url: dev_comments_path(@dev.id), method: "post" do |f| %>
   <% if @comment.errors.any? %>
     <div class="error_messages">
@@ -24,8 +25,7 @@
       <%= f.text_field :message %>
       <%= f.submit %>
     </div>
-
-    <h4><%= link_to "click to return to devs", devs_path %></h4>
+      <h4><%= link_to "click to return to devs", devs_path %></h4>
     <% if current_dev == @dev %>
       <h4><%= link_to "click to edit profile", edit_dev_path %></h4>
     <% end %>

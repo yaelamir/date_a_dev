@@ -1,10 +1,7 @@
-
-
-
 <%= form_for @dev do |f| %>
   <% if @dev.errors.any? %>
    <div class="error_messages">
-      <h2>Form is invalid</h2>
+    <h2>Form is invalid</h2>
       <ul>
         <% for message in @dev.errors.full_messages %>
           <li><%= message %></li>

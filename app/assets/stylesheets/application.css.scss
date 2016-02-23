@@ -9,7 +9,34 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
+ *= require rails_bootstrap_forms
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  text-align: center;
+  background-image: url("");
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+button {
+  background-color: white;
+}
+
+.header-login {
+    align: right;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.field {
+  position: relative;
+  text-align: right;
+  right: 40%;
+}
+
