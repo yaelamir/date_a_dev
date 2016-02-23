@@ -1,6 +1,4 @@
-<h1>GitLove</h1>
-
-
+<%= link_to "delete", dev_path, method: :delete, data: {confirm: "Are you sure you want to delete your profile?"} %>
 
 <%= form_for @dev do |f| %>
   <% if @dev.errors.any? %>
@@ -65,5 +63,5 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>
-  <div class="actions"><%= f.submit %></div>
+  <div class="actions"><%= f.submit "update profile" %></div>
 <% end %>

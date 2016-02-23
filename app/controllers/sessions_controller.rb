@@ -16,7 +16,8 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:dev_id] = nil
-    redirect_to root_path, notice: "Logged out!"
+    flash[:notice] = "Logged out!"
+    redirect_to devs_path
   end
 
 end

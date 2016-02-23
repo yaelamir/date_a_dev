@@ -18,6 +18,8 @@
     <div>
       <%= f.label :message %>
       <%= f.text_field :message %>
-      <%= f.submit  %>
+      <%= f.submit %>
     </div>
+    <h4><%= link_to "click to return to devs", devs_path %></h4>
+    <h4><%= link_to "click to edit profile", edit_dev_path %></h4>
 <% end %>

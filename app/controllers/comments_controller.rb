@@ -13,4 +13,7 @@ class CommentsController < ApplicationController
     end
 
   end
+
+  # def index
+  #   @devs
 end

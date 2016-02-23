@@ -7,10 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if current_dev %>
+    Welcome, <%= @current_dev.first_name %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <%= link_to 'Logout', session_path('dummy'), method: :delete %>
+  <% else %>
+   <%= link_to 'Login', login_path %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+   <%= link_to 'Sign Up', new_dev_path %>
+<% end %>
 <nav>
-  <ul>
-    <li><a href="" title=""></a></li>
-  </ul>
+<%= link_to "Home", devs_path %>
+<%= link_to "Profile", current_dev %>
+
 </nav>
 <%= yield %>
 

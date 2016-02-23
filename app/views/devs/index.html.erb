@@ -1,19 +1,12 @@
 <h1>GitLove</h1>
 <main>
 
-<% if current_dev %>
-    Welcome, <%= @current_dev.first_name %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Logout', session_path('dummy'), method: :delete %>
-  <% else %>
-   <%= link_to 'Login', login_path %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-<% end %>
+
 <% @devs.each do |dev| %>
   <article>
-    <%= image_tag(dev.picture_url) %>
-    <h4><%= link_to dev.first_name %></h4>
-
+    <%= image_tag (dev.picture_url), {height: 150} %>
+    <h4><%= dev.first_name %></h4>
+    <h4><%= link_to "click to view user", dev_path(dev) %></h4>
   </article>
 
 <% end %>

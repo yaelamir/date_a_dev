@@ -31,6 +31,24 @@ class DevsController < ApplicationController
     end
   end
 
+def edit
+  @dev = Dev.find(params[:id])
+end
+
+def update
+  @dev = Dev.find(params[:id])
+  if @dev.update_attributes(dev_params)
+     redirect_to current_dev
+  else
+    render :edit
+  end
+end
+
+def destroy
+  @dev = Dev.find(params[:id])
+  @dev.destroy
+  redirect_to devs_path
+end
 private
   def dev_params
     params.require(:dev).permit(:dev, :email, :password, :description,
@@ -40,4 +58,8 @@ private
                                 :dev_lang_pref, :dev_level,
                                 :picture_url)
   end
+
+
+
+
 end
