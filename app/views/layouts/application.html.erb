@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<p><%= notice %></p>
+
 <% if current_dev %>
-    Welcome, <%= @current_dev.first_name %>
+    <nav>
+      <%= link_to "Home", devs_path %>
+      <%= link_to "Profile", current_dev %>
+      <%= link_to "Matches", dev_matches_path(current_dev) %>
+    </nav>
+
+    Welcome, <%= current_dev.first_name %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <%= link_to 'Logout', session_path('dummy'), method: :delete %>
   <% else %>
@@ -16,11 +25,7 @@
     &nbsp;&nbsp;|&nbsp;&nbsp;
    <%= link_to 'Sign Up', new_dev_path %>
 <% end %>
-<nav>
-<%= link_to "Home", devs_path %>
-<%= link_to "Profile", current_dev %>
-
-</nav>
+<h1>GitLove</h1>
 <%= yield %>
 
 </body>

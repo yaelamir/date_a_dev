@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   root "devs#new"
   resources :devs do
+    get '/matches', to: 'devs#matches'
     resources :comments
   end
 
   resources :sessions, only: [:new, :create, :destroy]
   get '/login', to: 'sessions#new'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

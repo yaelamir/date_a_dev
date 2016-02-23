@@ -1,7 +1,12 @@
 class DevsController < ApplicationController
   before_action :authorize, except: [:new, :create]
+  # before_action :check_current_dev [:edit, :update]
 
   def index
+    @devs = Dev.all
+  end
+
+  def matches
     @devs = Dev.all
   end
 
@@ -38,10 +43,15 @@ end
 def update
   @dev = Dev.find(params[:id])
   if @dev.update_attributes(dev_params)
-     redirect_to current_dev
+    redirect_to current_dev
   else
     render :edit
   end
+
+
+
+
+
 end
 
 def destroy
@@ -58,6 +68,10 @@ private
                                 :dev_lang_pref, :dev_level,
                                 :picture_url)
   end
+
+# def check_current_dev
+#   unless current_dev
+# end
 
 
 

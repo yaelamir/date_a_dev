@@ -1,4 +1,3 @@
-<h1>GitLove</h1>
 <main>
 
 
@@ -6,8 +5,12 @@
   <article>
     <%= image_tag (dev.picture_url), {height: 150} %>
     <h4><%= dev.first_name %></h4>
+    <h4><%= dev.interested_in %></h4>
+    <h4><%= dev.github_username %></h4>
     <h4><%= link_to "click to view user", dev_path(dev) %></h4>
   </article>
 
 <% end %>
+
+
 </main>
