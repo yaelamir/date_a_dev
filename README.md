@@ -12,6 +12,7 @@ Ruby on Rails
 Bootstrap
 
 
+quickstart - installation instructions
 
 
 

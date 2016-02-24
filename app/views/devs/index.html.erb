@@ -1,7 +1,7 @@
 <div class="whole">
   <% @devs.each do |dev| %>
     <div class="thumbnail">
-      <%= image_tag (dev.picture_url), :class => "profile-pic responsive-image" %>
+      <%= image_tag (dev.picture), :class => "profile-pic responsive-image" %>
     <div class="text">
 <!-- <div class="row"> -->
 
@@ -10,6 +10,7 @@
 
 
     <%= link_to "click to view user", dev_path(dev) %>
+
 <!-- </div> -->
 <!-- </div> -->
 </div>

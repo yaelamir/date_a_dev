@@ -7,7 +7,7 @@ class CreateDevs < ActiveRecord::Migration
       t.string :gender
       t.string :location
       t.string :email
-      t.date :born_on
+      t.date   :born_on
       t.string :github_username
       t.string :prog_lang_pref
       t.string :dev_level

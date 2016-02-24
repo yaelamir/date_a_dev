@@ -66,7 +66,7 @@ private
                                 :last_name, :interested_in, :gender,
                                 :location, :born_on, :github_username,
                                 :dev_lang_pref, :dev_level,
-                                :picture_url)
+                                :picture)
   end
 
 # def check_current_dev

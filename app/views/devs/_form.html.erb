@@ -1,7 +1,7 @@
 <div class="container-fluid" id="bigcontainer">
   <div class="wrapper" class="center-block">
     <div class="col-md-25 col-md-offset-15">
-      <%= bootstrap_form_for(@dev) do |f| %>
+      <%= bootstrap_form_for(@dev, html: { multipart: true }) do |f| %>
        <div id="column-one">
         <%=f.text_field :first_name, placeholder: "First Name", :label => false %>
         <%= f.text_field :last_name, placeholder: "Last Name" %>
@@ -14,7 +14,7 @@
         <%= f.select :dev_level, [["Junior Developer", "Junior"], ["Mid Developer", "Mid Developer"], ["Senior Developer", "Senior Developer"]], { class: "selectpicker" } %>
         <%= f.select :prog_lang_pref, [["Ruby", "Ruby"], ["Javascript", "Javascript"], ["HTML", "HTML"], ["CSS", "CSS"], ["Java", "Java"], ["Python", "Python"], ["C++", "C++"]], { class: "selectpicker" } %>
         <%= f.date_select :born_on, start_year: 1960, end_year: 2000, order: [:month, :day, :year] %>
-        <%= f.text_field :picture_url, placeholder: "Picture URL" %>
+        <%= f.file_field :picture, class: "form-control" %>
         <%= f.text_area :description, placeholder: "A short description of yourself goes here!" %>
         <%= f.password_field :password, placeholder: "Password" %>
         <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
