@@ -1,15 +1,22 @@
 <div class="whole">
   <% @devs.each do |dev| %>
     <div class="thumbnail">
-      <%= image_tag (dev.picture_url), :class => "profile-pic img-responsive" %>
-      <div class="text">
-      <h4>Name: <%= dev.first_name %></h4>
-      <h5>Gender: <%= dev.gender %></h5>
-      <h5>Seeking: <%= dev.interested_in %></h5>
-      <h5>Github Username: <%= dev.github_username %></h5>
-      <%= link_to "click to view user", dev_path(dev) %>
-      </div>
-    </div>
-  <% end %>
+      <%= image_tag (dev.picture_url), :class => "profile-pic responsive-image" %>
+    <div class="text">
+<!-- <div class="row"> -->
+
+
+    <h4><%= dev.first_name%> <%=dev.last_name%></h4>
+
+
+    <%= link_to "click to view user", dev_path(dev) %>
+<!-- </div> -->
+<!-- </div> -->
+</div>
+  </div>
+
+
+
+<% end %>
 </div>
 

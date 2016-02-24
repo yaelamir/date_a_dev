@@ -29,6 +29,7 @@ h1 {
 .profile-pic {
   height: 100px;
   width: 100%;
+  max-height: 250px;
 }
 
 .show {
@@ -44,13 +45,19 @@ h1 {
   height: 25%;
   // padding-bottom: 5px;
   float: bottom;
+  max-height: 50px;
+
 
 }
 
 .thumbnail {
-  width: 20%;
+  position: center;
+  width: 18%;
   padding-bottom: 5px;
   position: relative;
+  max-height: 350px;
+  min-height: 350px;
+  margin: 10px;
 
 }
 
@@ -84,7 +91,7 @@ h1 {
 
 body {
   text-align: center;
-  background-image: url("http://digitalresult.com/wp-content/uploads/2015/08/romantic-love-couple-hd-wallpapers-51.jpeg");
+  background-image: url("");
   background-position: fixed;
   background-repeat: no-repeat;
   background-size: 110%;
