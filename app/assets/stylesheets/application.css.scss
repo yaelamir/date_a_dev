@@ -17,13 +17,14 @@
 @import "bootstrap";
 
 .navbar {
-  opacity: 0.5;
+  // opacity: 0.5;
 }
 
 h1 {
   font-size: 450%;
   padding-bottom: 50px;
   font-weight: bold;
+  padding-right: 20px;
 }
 
 .profile-pic {
@@ -63,7 +64,7 @@ h1 {
 
 .nav {
   background-color: white;
-
+  padding-left: 20px;
 }
 
 .login {
@@ -74,18 +75,15 @@ h1 {
 }
 
 .welcome {
-  margin-top: 0;
-  position: fixed;
-  left: 15px;
-  top: 50px;
-  margin-right: 20px 20px;
-  clear: right;
-  z-index: 999px;
+  margin: 20px;
+  padding: 20px;
+  clear: left;
+  // z-index: 999px;
   color: black;
   font-size: 20px;
   background-color: white;
-  text-align: right;
-  justify-content: right;
+  text-align: left;
+  justify-content: left;
   display: flex;
 }
 
@@ -98,6 +96,7 @@ body {
   padding-top: 70px;
   padding-bottom: 50px;
   font-family: 'Playfair Display', serif;
+  padding-left: 20px;
 }
 
 .wrapper {
