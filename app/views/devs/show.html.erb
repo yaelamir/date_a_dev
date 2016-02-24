@@ -1,19 +1,37 @@
-<div>
-   <%= image_tag (@dev.picture_url), {height: 150} %>
-   <%= @dev.first_name %>
-   <%= @dev.last_name %>
-   <%= @dev.gender %>
+<div class="show">
+  <%= image_tag (@dev.picture_url), {height: 150} %>
+  <br>
+  <h5> Name: <%= @dev.first_name %> <%= @dev.last_name %></h5>
+  <br>
+  <h5><%= @dev.gender %></h5>
+  <br>
+  <h5> Seeking: <%= @dev.interested_in %></h5>
+  <br>
+  <h5> Location: <%= @dev.location %></h5>
+  <br>
+  <h5>Email Address: <%= @dev.email %></h5>
+  <br>
+  <h5>Birthday: <%= @dev.born_on %> </h5>
+  <br>
+  <h5> Description: <%= @dev.description %> </h5>
+  <br>
+  <h5> Github Username: <%= @dev.github_username %></h5>
+  <br>
+  <h5> Programming Language Preference: <%= @dev.prog_lang_pref %></h5>
+  <br>
+  <h5> Developer Level: <%= @dev.dev_level %></h5>
 </div>
-
 <ul>
   <% @comments.each do |comment| %>
-    <li><%= comment.message %></li>
+   <div class="comment">
+
+     <b><li><%= Dev.find(comment.author_id).first_name %></b> <%= comment.message %></li></div>
   <% end %>
 </ul>
 <%= form_for @comment, url: dev_comments_path(@dev.id), method: "post" do |f| %>
   <% if @comment.errors.any? %>
     <div class="error_messages">
-      <h2>Form is invalid</h2>
+      <h5>Form is invalid</h5>
       <ul>
         <% for message in @comment.errors.full_messages %>
           <li><%= message %></li>
@@ -26,8 +44,8 @@
       <%= f.text_field :message %>
       <%= f.submit %>
     </div>
-      <h4><%= link_to "click to return to devs", devs_path %></h4>
+      <h4><%= link_to "return to devs", devs_path %></h4>
     <% if current_dev == @dev %>
-      <h4><%= link_to "click to edit profile", edit_dev_path %></h4>
+      <h4><%= link_to "edit profile", edit_dev_path %></h4>
     <% end %>
 <% end %>

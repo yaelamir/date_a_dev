@@ -2,43 +2,38 @@
 <html>
 <head>
   <title>GitLove</title>
-<link rel="shortcut icon" href="http://www.clipartbest.com/cliparts/yck/bbM/yckbbM7cE.png">
-
+  <link rel="shortcut icon" href="http://www.clipartbest.com/cliparts/yck/bbM/yckbbM7cE.png">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
 </head>
-<body>
-  <h1>GitLove</h1>
-  <p><%= notice %></p>
-  <% if current_dev %>
+<h1>GitLove</h1>
 
-    <nav class="nav">
-      <div class="container">
-        <ul class="nav nav-pills navbar-fixed-top">
-          <li role="presentation" class="active"><%= link_to "Home", devs_path %></li>
-          <li role="presentation"><%= link_to "Profile", current_dev %></li>
-          <li role="presentation"><%= link_to "Matches", dev_matches_path(current_dev) %></li>
-          <li role="presentation"><%= link_to "Log Out", session_path('dummy'), method: :delete %></li>
-        </ul>
-      </div>
-    </nav>
-    <span>
-      <li class="welcome" role="presentation"> Welcome, <%= current_dev.first_name %></li>
-      &nbsp;&nbsp; &nbsp;&nbsp;
-    </span>
+  <%= notice %>
+  <% if current_dev %>
+  <header class="navbar navbar-fixed-top">
+<!--   <div class="container-fluid">
+ --><ul class="nav navbar-nav pull-right">
+
+      <li role="presentation" class="active"><%= link_to "Home", devs_path %> </li>
+      <li role="presentation"><%= link_to "Profile", current_dev %> </li>
+      <li role="presentation"><%= link_to "Matches", dev_matches_path(current_dev) %> </li>
+      <li role="presentation"><%= link_to "Log Out", session_path('dummy'), method: :delete %> </li>
+    </ul>
+<!--  </div>
+ -->  </header>
+
   <% else %>
-    <nav class="nav">
-      <div class="container">
-        <ul class="nav nav-pills navbar-fixed-top">
+    <header class="navbar navbar-fixed-top">
+        <ul class="nav navbar-nav pull-right">
           <li role="presentation"><%= link_to 'Login', login_path%></li>
           <li role="presentation"><%= link_to 'Sign Up', new_dev_path %></li>
         </ul>
-      </div>
-    </nav>
-<% end %>
+    </header>
 
+<% end %>
 <%= yield %>
 
 </body>

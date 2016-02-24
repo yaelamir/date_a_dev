@@ -16,10 +16,47 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.navbar {
+  opacity: 0.5;
+}
+
+h1 {
+  font-size: 450%;
+  padding-bottom: 50px;
+  font-weight: bold;
+}
+
+.profile-pic {
+  height: 100px;
+  width: 100%;
+}
+
+.show {
+  display: inline-block;
+}
+
+.whole {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.text {
+  height: 25%;
+  // padding-bottom: 5px;
+  float: bottom;
+
+}
+
+.thumbnail {
+  width: 20%;
+  padding-bottom: 5px;
+  position: relative;
+
+}
 
 .nav {
-  width: 100%;
   background-color: white;
+
 }
 
 .login {
@@ -30,56 +67,47 @@
 }
 
 .welcome {
+  margin-top: 0;
   position: fixed;
   left: 15px;
   top: 50px;
   margin-right: 20px 20px;
   clear: right;
-  z-index: -999px;
+  z-index: 999px;
   color: black;
   font-size: 20px;
-
-}
-
-.center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.thumbnail {
-  width: 25%;
-  display: inline-block;
+  background-color: white;
+  text-align: right;
+  justify-content: right;
+  display: flex;
 }
 
 body {
   text-align: center;
-  background-image: url('');
+  background-image: url("http://digitalresult.com/wp-content/uploads/2015/08/romantic-love-couple-hd-wallpapers-51.jpeg");
   background-position: fixed;
   background-repeat: no-repeat;
   background-size: 110%;
-  padding: 70px;
+  padding-top: 70px;
+  padding-bottom: 50px;
+  font-family: 'Playfair Display', serif;
 }
 
 .wrapper {
   width: 50%;
   text-align: center;
-
+  display: block;
 }
 
 #logout {
   text-align: left;
 }
 
-.welcome {
-  text-align: right;
-  justify-content: right;
-  display: flex;
-}
-
 #bigcontainer {
   display: flex;
   justify-content: center;
+  padding-bottom: 30px;
+  width: 50%;
 }
 
 ul {
@@ -90,11 +118,14 @@ button {
   background-color: white;
 }
 
-.header-login {
-  align: right;
-  font-size: 15px;
-  font-weight: 400;
+.comment {
+  display: inline;
 }
+// .header-login {
+//   align: right;
+//   font-size: 15px;
+//   font-weight: 400;
+// }
 
 .field {
   text-align: center;
@@ -108,6 +139,11 @@ button {
   padding-top: 20px;
 }
 
+header {
+  background-color: white;
+}
 
-
+.control-label {
+  display: none;
+}
 
