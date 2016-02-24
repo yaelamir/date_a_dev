@@ -3,7 +3,7 @@ class DevsController < ApplicationController
   # before_action :check_current_dev [:edit, :update]
 
   def index
-    @devs = Dev.all
+    @devs = Dev.all.order('created_at DESC')
   end
 
   def matches

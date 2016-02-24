@@ -1,13 +1,18 @@
-<h1>Login</h1>
+
+
+
 <p id="alert"><%= alert %></p>
 <%= form_tag sessions_path do %>
+
   <div class="field">
-    <%= label_tag :email %>
+    <div class="text"> <%= label_tag :email %> </div>
     <%= text_field_tag :email, params[:email] %>
   </div>
   <div class="field">
-    <%= label_tag :password %>
+     <div class="text"> <%= label_tag :password %> </div>
     <%= password_field_tag :password %>
   </div>
   <div class="actions"><%= submit_tag "Log in" %></div>
+
 <% end %>
+

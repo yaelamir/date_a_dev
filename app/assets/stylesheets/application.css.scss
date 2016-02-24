@@ -16,12 +16,74 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+.nav {
+  width: 100%;
+  background-color: white;
+}
+
+.login {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  display: fixed;
+}
+
+.welcome {
+  position: fixed;
+  left: 15px;
+  top: 50px;
+  margin-right: 20px 20px;
+  clear: right;
+  z-index: -999px;
+  color: black;
+  font-size: 20px;
+
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thumbnail {
+  width: 25%;
+  display: inline-block;
+}
+
 body {
   text-align: center;
-  background-image: url("");
+  background-image: url('');
   background-position: fixed;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 110%;
+  padding: 70px;
+}
+
+.wrapper {
+  width: 50%;
+  text-align: center;
+
+}
+
+#logout {
+  text-align: left;
+}
+
+.welcome {
+  text-align: right;
+  justify-content: right;
+  display: flex;
+}
+
+#bigcontainer {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
 }
 
 button {
@@ -35,14 +97,17 @@ button {
 }
 
 .field {
+  text-align: center;
+  display: block;
+  justify-content: left;
   position: relative;
-  text-align: right;
-  right: 40%;
+  justify-content: center;
 }
 
 .actions {
-
+  padding-top: 20px;
 }
+
 
 
 

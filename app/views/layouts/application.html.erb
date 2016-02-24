@@ -2,16 +2,17 @@
 <html>
 <head>
   <title>GitLove</title>
+<link rel="shortcut icon" href="http://www.clipartbest.com/cliparts/yck/bbM/yckbbM7cE.png">
+
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
-
-<p><%= notice %></p>
-<h1>GitLove</h1>
-<% if current_dev %>
+  <h1>GitLove</h1>
+  <p><%= notice %></p>
+  <% if current_dev %>
 
     <nav class="nav">
       <div class="container">
@@ -19,13 +20,15 @@
           <li role="presentation" class="active"><%= link_to "Home", devs_path %></li>
           <li role="presentation"><%= link_to "Profile", current_dev %></li>
           <li role="presentation"><%= link_to "Matches", dev_matches_path(current_dev) %></li>
+          <li role="presentation"><%= link_to "Log Out", session_path('dummy'), method: :delete %></li>
         </ul>
       </div>
     </nav>
-    Welcome, <%= current_dev.first_name %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <button type="button" class="btn btn-primary-outline"><%= link_to 'Logout', session_path('dummy'), method: :delete %></button>
-<% else %>
+    <span>
+      <li class="welcome" role="presentation"> Welcome, <%= current_dev.first_name %></li>
+      &nbsp;&nbsp; &nbsp;&nbsp;
+    </span>
+  <% else %>
     <nav class="nav">
       <div class="container">
         <ul class="nav nav-pills navbar-fixed-top">
