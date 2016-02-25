@@ -2,22 +2,8 @@
   <% @devs.each do |dev| %>
     <div class="thumbnail">
       <%= image_tag (dev.picture), :class => "profile-pic responsive-image" %>
-    <div class="text">
-<!-- <div class="row"> -->
-
-
-    <h4><%= dev.first_name%> <%=dev.last_name%></h4>
-
-
-    <%= link_to "click to view user", dev_path(dev) %>
-
-<!-- </div> -->
-<!-- </div> -->
-</div>
-  </div>
-
-
-
-<% end %>
+      <h4><%= link_to dev.first_name, dev_path(dev) %></h4>
+    </div>
+  <% end %>
 </div>
 

@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # binding.pry
     dev = Dev.find_by(email: params[:email])
     if dev && dev.authenticate(params[:password])
       session[:dev_id] = dev.id

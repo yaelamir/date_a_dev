@@ -10,33 +10,25 @@
   <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
 </head>
 <h1>GitLove</h1>
-
   <%= notice %>
   <% if current_dev %>
-  <header class="navbar navbar-fixed-top">
-    <h4 class="pull-left">Welcome, <%= current_dev.first_name %> </h4>
-
-<!--   <div class="container-fluid">
- --><ul class="nav navbar-nav pull-right">
-
-      <li role="presentation" class="active"><%= link_to "Home", devs_path %> </li>
-      <li role="presentation"><%= link_to "Profile", current_dev %> </li>
-      <li role="presentation"><%= link_to "Matches", dev_matches_path(current_dev) %> </li>
-      <li role="presentation"><%= link_to "Log Out", session_path('dummy'), method: :delete %> </li>
-    </ul>
-<!--  </div>
- -->  </header>
-
+    <header class="navbar navbar-fixed-top">
+      <h4 id="welcome" class="pull-left">Welcome, <%= current_dev.first_name %> </h4>
+      <ul class="nav navbar-nav pull-right">
+        <li role="presentation" class="active"><%= link_to "Home", devs_path %> </li>
+        <li role="presentation"><%= link_to "Profile", current_dev %> </li>
+        <li role="presentation"><%= link_to "Matches", dev_matches_path(current_dev) %> </li>
+        <li role="presentation"><%= link_to "Log Out", session_path('dummy'), method: :delete %> </li>
+      </ul>
+   </header>
   <% else %>
     <header class="navbar navbar-fixed-top">
-        <ul class="nav navbar-nav pull-right">
-          <li role="presentation"><%= link_to 'Login', login_path%></li>
-          <li role="presentation"><%= link_to 'Sign Up', new_dev_path %></li>
-        </ul>
+      <ul class="nav navbar-nav pull-right">
+        <li role="presentation"><%= link_to 'Login', login_path%></li>
+        <li role="presentation"><%= link_to 'Sign Up', new_dev_path %></li>
+      </ul>
     </header>
-
-<% end %>
-<%= yield %>
-
+  <% end %>
+  <%= yield %>
 </body>
 </html>

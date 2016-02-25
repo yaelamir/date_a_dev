@@ -6,8 +6,8 @@
         <%=f.text_field :first_name, placeholder: "First Name", :label => false %>
         <%= f.text_field :last_name, placeholder: "Last Name" %>
         <%=f.email_field :email, placeholder: "Email Address" %>
-        <%= f.select :gender, [["Female", "Female"], ["Male", "Male"], ["Other", "Other"]], { class: "selectpicker" } %>
-        <%= f.select :interested_in, [["Female", "Female"], ["Male", "Male"], ["Other", "Other"]], { class: "selectpicker" } %>
+        <%= f.select :gender, [["Female", "Female"], ["Male", "Male"], ["Other", "Other"]], { class: "selectpicker"}, placeholder: "Gender" %>
+        <%= f.select :interested_in, [["Female", "Female"], ["Male", "Male"], ["Other", "Other"]], { class: "selectpicker", placeholder: "Seeking"} %>
         <%=f.text_field :location, placeholder: "Location" %>
         <%=f.text_field :github_username, placeholder: "Github Username" %>
        </div>
@@ -18,7 +18,7 @@
         <%= f.text_area :description, placeholder: "A short description of yourself goes here!" %>
         <%= f.password_field :password, placeholder: "Password" %>
         <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
-        <%= f.submit %>
+        <button id="btn1" class="btn btn-default" type="submit">Submit</button>
       <% end %>
     </div>
   </div>

@@ -1,4 +1,5 @@
 <main>
+<h4 class="pull-left"><%= current_dev.first_name %>'s Matches </h4>
 
 <% @devs.each do |dev| %>
   <% if current_dev.interested_in == dev.gender %>
@@ -9,7 +10,7 @@
           <h4><%= dev.first_name %></h4>
           <h4><%= dev.interested_in %></h4>
           <h4><%= dev.github_username %></h4>
-          <h4><%= link_to "click to view user", dev_path(dev) %></h4>
+          <h4><%= link_to "view profile", dev_path(dev) %></h4>
         </article>
       <% end %>
     <% end %>

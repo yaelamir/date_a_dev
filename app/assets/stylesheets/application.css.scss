@@ -16,50 +16,80 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
+// * {
+//   border: 1px solid purple;
+// }
+
 .navbar {
   // opacity: 0.5;
 }
 
 h1 {
   font-size: 450%;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
   font-weight: bold;
   padding-right: 20px;
 }
 
-.profile-pic {
-  height: 100px;
-  width: 100%;
-  max-height: 250px;
+h4  {
+  font-weight: bold;
 }
 
-.show {
-  display: inline-block;
+#welcome {
+  margin: 20px;
+  word-spacing: 8px;
+}
+
+#btn1 {
+  margin: 20px;
+}
+
+#btn2 {
+  margin: 20px;
+}
+
+.show > col {
+  display: block;
+  padding: 0;
+}
+
+.profile-pic {
+  height: 300px;
+  width: auto;
+  max-height: 200px;
 }
 
 .whole {
+  display: inline-block;
   display: flex;
   flex-wrap: wrap;
 }
 
-.text {
-  height: 25%;
-  // padding-bottom: 5px;
-  float: bottom;
-  max-height: 50px;
-
-
+.comment-icon {
+  height: 1px;
+  width: auto;
 }
 
 .thumbnail {
   position: center;
-  width: 18%;
+  width: 220px;
   padding-bottom: 5px;
   position: relative;
-  max-height: 350px;
-  min-height: 350px;
-  margin: 10px;
+  height: 250px;
+  margin: 5px;
 
+}
+
+.pics > img {
+  // max-height: 100px;
+  max-width: 150px;
+  margin: 25px;
+}
+
+#left-col {
+  margin-left: 0;
 }
 
 .nav {
@@ -67,11 +97,27 @@ h1 {
   padding-left: 20px;
 }
 
+.col-md-4 {
+  width: 50%;
+  height: 300px;
+  // border: 1px solid black;
+  // position: center;
+  display: inline;
+  // margin: 0 auto;
+  padding: 10px;
+}
+
 .login {
   text-align: center;
   display: block;
   margin: 0 auto;
   display: fixed;
+}
+.row {
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px;
+  // width: 700px;
 }
 
 .welcome {
@@ -92,15 +138,15 @@ body {
   background-image: url("");
   background-position: fixed;
   background-repeat: no-repeat;
-  background-size: 110%;
+  // background-size: 110%;
   padding-top: 70px;
   padding-bottom: 50px;
   font-family: 'Playfair Display', serif;
-  padding-left: 20px;
+  padding-left: 5px;
 }
 
 .wrapper {
-  width: 50%;
+  width: auto;
   text-align: center;
   display: block;
 }
@@ -118,6 +164,7 @@ body {
 
 ul {
   list-style-type: none;
+  display: inline;
 }
 
 button {
@@ -127,18 +174,33 @@ button {
 .comment {
   display: inline;
 }
+
+.container {
+  width: 50%;
+}
 // .header-login {
 //   align: right;
 //   font-size: 15px;
 //   font-weight: 400;
 // }
+// #comment {
+//   border: 1px solid red;
+//   position: relative;
+// }
+.comment-field {
+  width: 500px;
+  // position: inline;
+  text-align: center;
+  justify-content: center;
+  float: right;
+}
 
 .field {
   text-align: center;
   display: block;
-  justify-content: left;
-  position: relative;
-  justify-content: center;
+  // justify-content: left;
+  // position: relative;
+  // justify-content: center;
 }
 
 .actions {
