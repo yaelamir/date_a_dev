@@ -1,65 +1,65 @@
-<div class="container">
-
-
-  <div class="page-header">
-    <small><h3><%= @dev.first_name %>'s Profile</h3></small>
-  </div>
-
-    <div class="row">
-      <div id="col1" class="col-sm-4 pull-left">
-        <h4>General Info</h4>
-        <h5> <b>Seeking:</b> <%= @dev.interested_in %> </h5>
-        <h5> <b>Gender:</b> <%= @dev.gender %> </h5>
-        <h5> <b>Location:</b> <%= @dev.location %> </h5>
-        <h5> <b>Birthday:</b> <%= @dev.born_on.strftime("%B %e, %Y") %> </h5>
-      </div>
-      <div id="col2" class="col-sm-4 col-sm-offset-2 pull-right">
-        <h4>Dev Info</h4>
-        <h5> <b>Developer Level:</b> <%= @dev.dev_level %></h5>
-        <h5> <b>Github Username:</b> <%= @dev.github_username %></h5>
-        <h5> <b>Programming Language Preference:</b> <%= @dev.prog_lang_pref %></h5>
-      </div>
-    </div>
-  </div>
+<div class="page-header">
+  <small><h3><%= @dev.first_name %>'s Profile</h3></small>
 </div>
-  <div class="container-fluid">
-    <div class="thumbnail">
-      <%= image_tag(@dev.picture, standard: {height: 300, width: 300}) %>
-      <div class="caption">
-        <h5><b>Description:</b></h5>
-        <p><%= @dev.description %></p>
-      </div>
+
+<div class="row padded-row">
+  <div class="col-sm-2 col-sm-push-5 thumbnail">
+    <%= image_tag(@dev.picture, standard: {height: 300, width: 300}) %>
+    <div class="caption">
+      <h5><b>Description:</b></h5>
+      <p><%= @dev.description %></p>
     </div>
-<div class="col-sm-8 col-sm-offset-2" id="comment-boxes">
+  </div> <!-- .thumbnail -->
+
+  <div id="" class="col-sm-4 col-sm-pull-2 gen-info-panel">
+    <h4>General Info</h4>
+    <h5> <b>Seeking:</b> <%= @dev.interested_in %> </h5>
+    <h5> <b>Gender:</b> <%= @dev.gender %> </h5>
+    <h5> <b>Location:</b> <%= @dev.location %> </h5>
+    <h5> <b>Birthday:</b> <%= @dev.born_on.strftime("%B %e, %Y") %> </h5>
+  </div> <!-- .gen-info-panel -->
+
+  <div id="" class="col-sm-4 col-sm-offset-2 dev-info-panel">
+    <h4>Dev Info</h4>
+    <h5> <b>Developer Level:</b> <%= @dev.dev_level %></h5>
+    <h5> <b>Github Username:</b> <%= @dev.github_username %></h5>
+    <h5> <b>Programming Language Preference:</b> <%= @dev.prog_lang_pref %></h5>
+  </div> <!-- .dev-info-panel -->
+</div> <!-- .row !!!! -->
+
+
+
+<div id="comment-boxes" class="col-sm-8 col-sm-offset-2">
   <% @comments.each do |comment| %>
     <div id="commentsindex">
       <p><h4><%= Dev.find(comment.author_id).first_name %></h4> -  <%= comment.message %></p>
     </div>
   <% end %>
-</div>
-<div class="container">
-  <%= bootstrap_form_for @comment, url: dev_comments_path(@dev.id), method: "post" do |f| %>
-    <% if @comment.errors.any? %>
-      <div class="error_messages">
-        <h5>Form is invalid</h5>
-        <ul>
-          <% for message in @comment.errors.full_messages %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-    <div class="row"id="comment">
-      <div class="col-sm-8 col-sm-offset-1">
-        <%= f.text_field :message, placeholder: "Comments" %>
-      </div>
-      <div class=col-sm-1>
-        <button id="btn1" class="btn btn-default" type="submit">Submit</button>
-      </div>
+</div> <!-- #comment-boxes -->
+
+<%= bootstrap_form_for @comment, url: dev_comments_path(@dev.id), method: "post" do |f| %>
+  <% if @comment.errors.any? %>
+    <div class="error_messages">
+      <h5>Form is invalid</h5>
+      <ul>
+        <% for message in @comment.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     </div>
-    <button id="btn2" class="btn btn-default" type="submit"><%= link_to "Devs", devs_path %></button>
-      <% if current_dev == @dev %>
-        <button id="btn3" class="btn btn-default" type="submit"><%= link_to "Edit", edit_dev_path %></button>
-      <% end %>
   <% end %>
-</div>
+
+  <div class="row"id="comment">
+    <div class="col-sm-8 col-sm-offset-1">
+      <%= f.text_field :message, placeholder: "Comments" %>
+    </div>
+    <div class=col-sm-1>
+      <button id="btn1" class="btn btn-default" type="submit">Submit</button>
+    </div>
+  </div>
+
+  <button id="btn2" class="btn btn-default" type="submit"><%= link_to "Devs", devs_path %></button>
+  <% if current_dev == @dev %>
+    <button id="btn3" class="btn btn-default" type="submit"><%= link_to "Edit", edit_dev_path %></button>
+  <% end %>
+<% end %> <!-- bootstrap_form_for -->
