@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+
+gem 'puma'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 
@@ -48,3 +50,6 @@ group :development do
   gem 'spring'
 end
 
+gem 'rails_12factor', group: :production
+
+ruby "2.2.3"
