@@ -11,7 +11,7 @@
         <h5> Email Address: <%= @dev.email %></h5><br>
       </div>
       <div class="col-md-6 col-md-offset-0 col-sm-5 col-sm-offset-2 ">
-        <h5> Birthday: <%= @dev.born_on %> </h5><br>
+        <h5> Birthday: <%= @dev.born_on.strftime("%B %e, %Y") %> </h5><br>
         <h5> Developer Level: <%= @dev.dev_level %></h5><br>
         <h5> Github Username: <%= @dev.github_username %></h5><br>
         <h5> Programming Language Preference: <%= @dev.prog_lang_pref %></h5><br>

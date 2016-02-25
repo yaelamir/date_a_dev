@@ -8,6 +8,8 @@ private
 
   def current_dev
     @current_dev ||= Dev.find(session[:dev_id]) if session[:dev_id]
+    rescue ActiveRecord::RecordNotFound
+    session[:dev_id] = nil
   end
 
   def authorize

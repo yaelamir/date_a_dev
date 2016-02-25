@@ -1,8 +1,14 @@
 <div class="whole">
   <% @devs.each do |dev| %>
     <div class="thumbnail">
-      <%= image_tag (dev.picture), :class => "profile-pic responsive-image" %>
-      <h4><%= link_to dev.first_name, dev_path(dev) %></h4>
+      <% if dev.picture.blank? %>
+        <%= image_tag ("http://megadrupal.com/sites/all/themes/mega_theme/images/default-user.png"), :class => "profile-pic" %>
+      <% else %>
+        <%= image_tag dev.picture.url(:standard), :class => "profile-pic responsive-image" %>
+      <% end %>
+      <div id="thumbnail-text">
+        <h4><%= link_to dev.first_name, dev_path(dev) %></h4>
+      </div>
     </div>
   <% end %>
 </div>

@@ -7,13 +7,12 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
-</head>
-<h1>GitLove</h1>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'></head>
+  <h1 style="color: #333333">GitLove</h1>
   <%= notice %>
   <% if current_dev %>
     <header class="navbar navbar-fixed-top">
-      <h4 id="welcome" class="pull-left">Welcome, <%= current_dev.first_name %> </h4>
+      <h4 style="color: #E8E8EE" id="welcome" class="pull-left">Welcome, <%= current_dev.first_name %> </h4>
       <ul class="nav navbar-nav pull-right">
         <li role="presentation" class="active"><%= link_to "Home", devs_path %> </li>
         <li role="presentation"><%= link_to "Profile", current_dev %> </li>
