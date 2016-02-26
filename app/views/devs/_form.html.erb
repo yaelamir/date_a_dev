@@ -2,23 +2,25 @@
   <div class="wrapper" class="center-block">
     <div class="col-md-25 col-md-offset-15">
       <%= bootstrap_form_for(@dev, html: { multipart: true }) do |f| %>
-       <div id="column-one">
         <%=f.text_field :first_name, placeholder: "First Name", :label => false %>
         <%= f.text_field :last_name, placeholder: "Last Name" %>
         <%=f.email_field :email, placeholder: "Email Address" %>
+        <%= f.label :gender %>
         <%= f.select :gender, [["Female", "Female"],
                                ["Male", "Male"],
                                ["Other", "Other"]],
-                               { class: "selectpicker"},
-                               placeholder: "Gender" %>
+                               { class: "selectpicker"} %>
+        <%= f.label :interested_in, "Seeking" %>
         <%= f.select :interested_in, [["Female", "Female"], ["Male", "Male"], ["Other", "Other"]], { class: "selectpicker", placeholder: "Seeking"} %>
         <%=f.text_field :location, placeholder: "Location" %>
         <%=f.text_field :github_username, placeholder: "Github Username" %>
-       </div>
+
+        <%= f.label :dev_level, "Select your dev level" %>
         <%= f.select :dev_level, [["Junior Developer", "Junior"],
                                   ["Mid Developer", "Mid Developer"],
                                   ["Senior Developer", "Senior Developer"]],
                                   { class: "selectpicker" } %>
+        <%= f.label :prog_lang_pref, "Select your language preference" %>
         <%= f.select :prog_lang_pref, [["Ruby", "Ruby"],
                                        ["Javascript", "Javascript"],
                                        ["HTML", "HTML"],
@@ -29,9 +31,11 @@
                                        ["C", "C"],
                                        ["PHP", "PHP"]],
                                        { class: "selectpicker" } %>
+        <%= f.label :born_on, "Birthday" %>
         <%= f.date_select :born_on, order: [:month, :day, :year],
                                             start_year: 2015,
                                             end_year: 1950 %>
+        <%= f.label :picture, "Please upload a picture of yourself" %>
         <%= f.file_field :picture, class: "form-control" %>
         <%= f.text_area :description, placeholder: "A short description of yourself goes here!" %>
         <%= f.password_field :password, placeholder: "Password" %>

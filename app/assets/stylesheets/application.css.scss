@@ -160,10 +160,6 @@ h4 {
   justify-content: center;
 }
 
-#left-col {
-  margin-left: 0;
-}
-
 .wrapper {
   width: auto;
   text-align: center;
@@ -233,9 +229,14 @@ button {
   font: #F9F9FF;
 }
 
-#comment {
-  margin-top: 30px;
+#comment > .col-sm-6{
+  margin-top: 40px;
 }
+
+#comment > .col-sm-1 {
+  margin-top: 40px;
+}
+
 #btns {
   margin-top: 20px;
 }
