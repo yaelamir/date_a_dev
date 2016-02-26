@@ -14,11 +14,12 @@
     <div class="col-sm-6 col-sm-offset-3">
       <%= f.text_field :message, placeholder: "Comments" %>
     </div>
-    <div class=col-sm-1>
-
-      <%= f.submit "Save", class: "btn btn-default" %>
+  <div class=col-sm-1>
+    <div class="edit-btns">
+      <%= f.submit "Save" %>
       <%= link_to "Delete", comment_path, method: :delete %>
-<% end %> <!-- bootstrap_form_for -->
+    </div>
   </div>
-
 <% end %> <!-- bootstrap_form_for -->
+
+ <!-- bootstrap_form_for -->

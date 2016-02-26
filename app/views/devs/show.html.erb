@@ -34,9 +34,11 @@
     <div>
       <p id="commentsindex2"><%= comment.message %> - <span class="author"><%= comment.commentor.first_name %></span>
       <% if @dev == current_dev %>
-      <%= link_to "Edit", edit_dev_comment_path(@dev, comment), {class: "btn btn-default"} %>
-            <%= link_to "Delete", dev_comment_path(@dev, comment), method: :delete %>
+      <div class="edit-btns">
 
+      <%= link_to "Edit", edit_dev_comment_path(@dev, comment) %>
+      <%= link_to "Delete", dev_comment_path(@dev, comment), method: :delete %>
+</div>
       <% end %>
       </p>
 

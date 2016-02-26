@@ -1,16 +1,16 @@
 <main>
-
-<h4><%= current_dev.first_name %>'s Matches </h4>
-
-<% @devs.each do |dev| %>
-  <% if current_dev.matches(dev) %>
-    <article>
-      <%= image_tag (dev.picture), {height: 150} %>
-      <h4><%= dev.first_name %></h4>
-      <h4><%= link_to "View Profile", dev_path(dev) %></h4>
-    </article>
+  <h4><%= current_dev.first_name %>'s Matches </h4>
+  <% @devs.each do |dev| %>
+    <% if current_dev.matches(dev) %>
+      <article>
+        <div class="thumbnail">
+          <%= image_tag (dev.picture) %>
+            <div class="caption">
+              <h4><%= dev.first_name %></h4>
+              <h4><%= link_to "View Profile", dev_path(dev) %></h4>
+            </div>
+          </div>
+      </article>
+    <% end %>
   <% end %>
-<% end %>
-
-
 </main>
