@@ -13,6 +13,11 @@ Once logged in, users can browse developers in the home page and have the option
 
 Users also have the option to view their own profile information and edit it by navigating to edit their own "Profile" tab and clicking the "edit" button. They can then submit those changes and their profile will be updated automatically. Users also have the option to logout from every page of the application and then immidiatly have the option to log back in with ease. When users comment, they have the option to delete or edit posts. Gitlove is a fun and safe way to meet your perfect developer match! Happy matching :)
 
+##Installation Instructions
+
+###Cloning Repo:
+1. Fork my repo: git@github.com:yaelamir/date_a_dev.git
+
 
 ##Layout & Design:
 #####Note: Current pictures in app are default images. If user chooses not to have picture, the smiley face will automatically be uploaded.
@@ -61,13 +66,19 @@ Matches will appear under matches tab
 ##Languages, Technologies, and Frameworks 
 ###Development:
 - HTML
-- CSS
+- SASS & CSS
 - Ruby
 - Ruby on Rails
 - Bootstrap
+- Ruby gems (Paperclip, bcrypt, puma, etc)
 
 ###Deployment:
-- Heroku
+#####Heroku  
+- a cloud applictaion platform to build and deploy apps
+- click link for more info [heroku](https://www.heroku.com/about)  
+
+#####Amazon Web Services S3
+- 
 
 ##Planning
 
@@ -83,8 +94,6 @@ Includes erd diagram and wireframes
 6. The ability to comment with an emoji
 7. Users will have the ability to comment directly from the home page instead of having to go to the user's profile
 8. More complex matching algorithm
-
-##Installation Instructions
 
 ###Link: [GitLove](https://young-tundra-88777.herokuapp.com/devs/11)
 
