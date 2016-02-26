@@ -33,7 +33,7 @@
   <% @comments.each do |comment| %>
     <div>
       <p id="commentsindex2"><%= comment.message %> - <span class="author"><%= comment.commentor.first_name %></span>
-        <% if current_dev && @comment %>
+        <% if current_dev.id == comment.author_id %>
           <div class="edit-btns">
             <%= link_to "Edit", edit_dev_comment_path(@dev, comment) %>
             <%= link_to "Delete", dev_comment_path(@dev, comment), method: :delete %>
