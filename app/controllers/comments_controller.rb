@@ -13,6 +13,20 @@ class CommentsController < ApplicationController
 
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to dev_path(params[:dev_id])
+  end
+
   # def index
   #   @devs
 end

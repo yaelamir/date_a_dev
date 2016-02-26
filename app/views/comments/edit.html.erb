@@ -1,0 +1,24 @@
+<%= bootstrap_form_for @comment, url: dev_comments_path(@comment.dev, @comment), method: "post" do |f| %>
+  <% if @comment.errors.any? %>
+    <div class="error_messages">
+      <h5>Form is invalid</h5>
+      <ul>
+        <% for message in @comment.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row" id="comment">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= f.text_field :message, placeholder: "Comments" %>
+    </div>
+    <div class=col-sm-1>
+
+      <%= f.submit "Save", class: "btn btn-default" %>
+      <%= link_to "Delete", comment_path, method: :delete %>
+<% end %> <!-- bootstrap_form_for -->
+  </div>
+
+<% end %> <!-- bootstrap_form_for -->

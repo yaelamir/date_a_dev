@@ -18,6 +18,8 @@ class DevsController < ApplicationController
 
   def edit
     @dev = Dev.find(params[:id])
+    # @comments = @dev.comments
+    # Comment.find(@comment.author_id)
   end
 
   def new
@@ -35,10 +37,6 @@ class DevsController < ApplicationController
       render :new
     end
   end
-
-def edit
-  @dev = Dev.find(params[:id])
-end
 
 def update
   @dev = Dev.find(params[:id])

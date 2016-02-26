@@ -29,10 +29,17 @@
 
 
 
-<div id="comment-boxes" class="col-sm-8 col-sm-offset-2">
+<div id="commentsindex" class="col-sm-8 col-sm-offset-2">
   <% @comments.each do |comment| %>
-    <div id="commentsindex">
-      <p><h4><%= Dev.find(comment.author_id).first_name %></h4> -  <%= comment.message %></p>
+    <div>
+      <p id="commentsindex2"><%= comment.message %> - <span class="author"><%= comment.commentor.first_name %></span>
+      <% if @dev == current_dev %>
+      <%= link_to "Edit", edit_dev_comment_path(@dev, comment), {class: "btn btn-default"} %>
+            <%= link_to "Delete", dev_comment_path(@dev, comment), method: :delete %>
+
+      <% end %>
+      </p>
+
     </div>
   <% end %>
 </div> <!-- #comment-boxes -->
@@ -49,17 +56,21 @@
     </div>
   <% end %>
 
-  <div class="row"id="comment">
-    <div class="col-sm-8 col-sm-offset-1">
+  <div class="row" id="comment">
+    <div class="col-sm-6 col-sm-offset-3">
       <%= f.text_field :message, placeholder: "Comments" %>
     </div>
     <div class=col-sm-1>
-      <button id="btn1" class="btn btn-default" type="submit">Submit</button>
+      <%= f.submit "Add Comment", class: "btn btn-default" %>
     </div>
   </div>
 
-  <button id="btn2" class="btn btn-default" type="submit"><%= link_to "Devs", devs_path %></button>
-  <% if current_dev == @dev %>
-    <button id="btn3" class="btn btn-default" type="submit"><%= link_to "Edit", edit_dev_path %></button>
-  <% end %>
+
 <% end %> <!-- bootstrap_form_for -->
+
+<div id="btns">
+  <%= link_to "Devs", devs_path, {class: "btn btn-default"} %>
+  <% if current_dev == @dev %>
+     <%= link_to "Edit Profile", edit_dev_path(@dev), {class: "btn btn-default"} %>
+  <% end %>
+</div>
