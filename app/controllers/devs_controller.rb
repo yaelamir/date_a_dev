@@ -45,11 +45,6 @@ def update
   else
     render :edit
   end
-
-
-
-
-
 end
 
 def destroy
@@ -57,6 +52,7 @@ def destroy
   @dev.destroy
   redirect_to devs_path
 end
+
 private
   def dev_params
     params.require(:dev).permit(:dev, :email, :password, :description,

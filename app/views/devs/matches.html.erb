@@ -6,8 +6,7 @@
         <div class="thumbnail">
           <%= image_tag (dev.picture) %>
             <div class="caption">
-              <h4><%= dev.first_name %></h4>
-              <h4><%= link_to "View Profile", dev_path(dev) %></h4>
+              <h4><%= link_to dev.first_name, dev_path(dev) %></h4>
             </div>
           </div>
       </article>

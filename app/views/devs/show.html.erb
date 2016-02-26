@@ -33,15 +33,13 @@
   <% @comments.each do |comment| %>
     <div>
       <p id="commentsindex2"><%= comment.message %> - <span class="author"><%= comment.commentor.first_name %></span>
-      <% if @dev == current_dev %>
-      <div class="edit-btns">
-
-      <%= link_to "Edit", edit_dev_comment_path(@dev, comment) %>
-      <%= link_to "Delete", dev_comment_path(@dev, comment), method: :delete %>
-</div>
-      <% end %>
+        <% if current_dev && @comment %>
+          <div class="edit-btns">
+            <%= link_to "Edit", edit_dev_comment_path(@dev, comment) %>
+            <%= link_to "Delete", dev_comment_path(@dev, comment), method: :delete %>
+          </div>
+        <% end %>
       </p>
-
     </div>
   <% end %>
 </div> <!-- #comment-boxes -->

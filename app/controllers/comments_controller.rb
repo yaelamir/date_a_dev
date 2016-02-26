@@ -15,18 +15,19 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
+    @comment.destroy
   end
 
   def update
     @comment = Comment.find(params[:id])
+    @comment.destroy
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to dev_path(params[:dev_id])
+    redirect_to current_dev
   end
 
-  # def index
-  #   @devs
+
 end
