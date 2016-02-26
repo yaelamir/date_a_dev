@@ -1,8 +1,6 @@
 #GitLove
 
-####[Click here to visit GitLove! ](https://young-tundra-88777.herokuapp.com/devs/11)
-
-#####Not just for desperate losers! 
+####[Click here to visit GitLove!](https://young-tundra-88777.herokuapp.com/devs/11)
 
 ##Description:
 
@@ -15,9 +13,30 @@ Users also have the option to view their own profile information and edit it by 
 
 ##Installation Instructions
 
+###Direct Link:
+[GitLove](https://young-tundra-88777.herokuapp.com/login)
+
 ###Cloning Repo:
+
 1. Fork my repo: git@github.com:yaelamir/date_a_dev.git
 
+2. The Paperclip gen is installed, however, in order to get it to work you must install ImageMagick. In your terminal run the following command:
+
+	$sudo install ImageMagick
+
+3. Then, follow the steps here: [Paperclip Installation](https://github.com/thoughtbot/paperclip/wiki/Quick-Start)
+
+4. The next step is to create a free Heroku account in order to host the app. Install [heroku toolbelt](https://toolbelt.heroku.com/) then follow the steps here: [install heroku](https://devcenter.heroku.com/)
+
+5.	Now we need to set up an account with [Amazon Web Services](https://aws.amazon.com/s3/) for a limited amount of storage space
+
+6. IMPORTANT! Secure your AWS keys from your AWS user page by creating a .env file in your rails app (under vendor folder and above .gitignore) and put your AWS keys there.
+
+7. Follow the steps [here](https://devcenter.heroku.com/articles/paperclip-s3) to link your Amazon S3 and Heroku accounts
+
+8. ```$git push heroku master```
+
+9. Enjoy!
 
 ##Layout & Design:
 #####Note: Current pictures in app are default images. If user chooses not to have picture, the smiley face will automatically be uploaded.
@@ -72,18 +91,20 @@ Matches will appear under matches tab
 - Bootstrap
 - Ruby gems (Paperclip, bcrypt, puma, etc)
 
+
 ###Deployment:
 #####Heroku  
-- a cloud applictaion platform to build and deploy apps
-- click link for more info [heroku](https://www.heroku.com/about)  
+- Heroku is a cloud applictaion platform to build and deploy apps
+- click link for more info [Heroku](https://www.heroku.com/about)  
 
 #####Amazon Web Services S3
-- 
+- Amazon Simple Storage Service is a secure cloud storage
+- click link for more info [Amazon S3](https://aws.amazon.com/s3/)
 
 ##Planning
 
 ###Trello:
-Includes erd diagram and wireframes
+Includes erd diagram and wireframes [Trello](https://trello.com/b/Z0A8hjMb/gitlove)
 
 ###Next Steps:
 1. Users will be notified on their profile when someone has commented on their profile or if a match has been made

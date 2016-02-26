@@ -14,14 +14,7 @@ class Dev < ActiveRecord::Base
     default_url: "/images/default-user.png"
   )
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
-  # <%= image_tag.each do |pic| %>
-  #   <article>
-  #     <h4> <%= link_to pic.first_name, pic.picture_url %> </h4>
 
-
-  #     <img src="#{dev.picture_url}">
-  #   </article>
-  # <% end %>
 
   def matches(dev)
     self.vibes_with(dev) &&
